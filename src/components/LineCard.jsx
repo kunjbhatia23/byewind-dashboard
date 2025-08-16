@@ -20,11 +20,11 @@ export default function LineCard() {
       {
         label: "Last year",
         data: [7, 12, 16, 14, 10, 15, 22],
-        borderColor: "#a78bfa",
+        borderColor: "#93c5fd",
         tension: 0.4,
         pointRadius: (ctx) => (ctx.dataIndex === 2 ? 5 : 0),
         pointBackgroundColor: 'white',
-        pointBorderColor: '#a78bfa',
+        pointBorderColor: '#93c5fd',
         pointBorderWidth: 2,
       },
     ],
