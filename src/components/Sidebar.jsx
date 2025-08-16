@@ -81,7 +81,7 @@ export default function Sidebar() {
     };
 
   return (
-    <aside className="w-64 bg-white border-r flex flex-col flex-shrink-0">
+    <aside className="hidden md:flex w-64 bg-white border-r flex-col flex-shrink-0">
       {/* Sidebar Header */}
       <div className="px-6 h-16 flex items-center font-bold text-xl border-b border-gray-200">
         ByeWind
