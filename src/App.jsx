@@ -1,24 +1,24 @@
-import { Sidebar } from "./components/Sidebar";
-import { Header } from "./components/Header";
-import { Dashboard } from "./components/Dashboard";
-import { Rightbar } from "./components/Rightbar";
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
+import Rightbar from "./components/Rightbar";
 
-function App() {
+export default function App() {
   return (
-    <div className="flex h-screen w-full bg-gray-50">
+    <div className="flex bg-gray-50 h-screen">
       {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
       <div className="flex flex-col flex-1">
-        <Header />
-        <Dashboard />
-      </div>
+        {/* Navbar */}
+        <Navbar />
 
-      {/* Rightbar */}
-      <Rightbar />
+        {/* Main Content */}
+        <main className="p-6 flex gap-6">
+          <Dashboard />
+          <Rightbar />
+        </main>
+      </div>
     </div>
   );
 }
-
-export default App;
