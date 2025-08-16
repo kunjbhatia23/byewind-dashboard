@@ -11,7 +11,8 @@ export default function TrafficList() {
   ];
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
+    <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+      {/* ... rest of the component is the same */}
       <h3 className="font-medium text-gray-800">Traffic by Website</h3>
       <ul className="mt-4 space-y-4">
         {items.map((it, idx) => (

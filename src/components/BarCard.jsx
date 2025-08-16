@@ -57,8 +57,9 @@ export default function BarCard() {
     },
   };
 
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
+   return (
+    <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+      {/* ... rest of the component is the same */}
       <h3 className="font-medium text-gray-800">Traffic by Device</h3>
       <div className="mt-4" style={{ height: "220px" }}>
         <Bar data={data} options={options} />

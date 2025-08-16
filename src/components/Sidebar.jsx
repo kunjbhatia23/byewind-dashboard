@@ -1,11 +1,14 @@
-import { HomeIcon, ChartPieIcon, UserIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+// src/components/Sidebar.jsx
+import { ChartPieIcon, UserIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-white border-r flex flex-col">
-      <div className="px-6 py-4 font-bold text-xl">ByeWind</div>
-      <nav className="flex-1 px-4 space-y-2 text-gray-700">
-        <p className="text-xs uppercase text-gray-400 mt-4">Favorites</p>
+    <aside className="w-64 bg-white border-r flex flex-col flex-shrink-0">
+      <div className="px-6 h-16 flex items-center font-bold text-xl border-b border-gray-200">
+        ByeWind
+      </div>
+      <nav className="flex-1 px-4 space-y-2 text-gray-700 py-6">
+        <p className="text-xs uppercase text-gray-400">Favorites</p>
         <div className="space-y-2">
           <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">Overview</a>
           <a href="#" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">Projects</a>

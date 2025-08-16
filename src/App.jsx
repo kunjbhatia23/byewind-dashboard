@@ -6,11 +6,11 @@ import RightRail from "./components/RightRail";
 
 export default function App() {
   return (
-    <div className="flex bg-gray-50 min-h-screen">
+    <div className="flex bg-gray-50 min-h-screen text-gray-800">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Navbar />
-        <main className="p-6 flex gap-6">
+        <main className="flex flex-1 p-6 gap-6">
           <Dashboard />
           <RightRail />
         </main>

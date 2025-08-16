@@ -27,7 +27,7 @@ export default function DonutCard() {
   });
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
+    <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
       <h3 className="font-medium text-gray-800">Traffic by Location</h3>
       <div className="mt-4 flex items-center gap-6">
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
