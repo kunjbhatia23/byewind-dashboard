@@ -1,29 +1,67 @@
+// src/components/BarCard.jsx
+import { Bar } from "react-chartjs-2";
+
 export default function BarCard() {
-  const items = [
-    { label: "Linux", v: 19 },
-    { label: "Mac", v: 23 },
-    { label: "iOS", v: 18 },
-    { label: "Windows", v: 26 },
-    { label: "Android", v: 10 },
-    { label: "Other", v: 22 },
-  ];
-  const max = 30;
+  const data = {
+    labels: ["Linux", "Mac", "iOS", "Windows", "Android", "Other"],
+    datasets: [
+      {
+        label: "Traffic by Device",
+        data: [18, 22, 19, 24, 8, 22],
+        backgroundColor: [
+          "#a78bfa",
+          "#bbf7d0",
+          "#111827",
+          "#7dd3fc",
+          "#a5b4fc",
+          "#bbf7d0",
+        ],
+        borderRadius: 4,
+        barPercentage: 0.6,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 30,
+        ticks: {
+          stepSize: 10,
+          callback: (value) => `${value}M`,
+          color: "#9ca3af",
+          padding: 10,
+        },
+        grid: {
+          color: "#e5e7eb",
+          drawBorder: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          color: "#9ca3af",
+          padding: 10,
+        },
+      },
+    },
+  };
 
   return (
-    <div className="bg-card rounded-xl2 border border-ring shadow-soft p-4">
-      <h3 className="font-medium">Traffic by Device</h3>
-      <div className="mt-2 text-xs text-muted">0–30M</div>
-      <div className="mt-4 flex items-end justify-between gap-3 h-40">
-        {items.map((it, idx) => (
-          <div key={idx} className="flex flex-col items-center flex-1">
-            <div
-              className="w-7 rounded-t-md bg-gray-900"
-              style={{ height: `${(it.v / max) * 100}%` }}
-              title={`${it.label} ${it.v}M`}
-            />
-            <div className="mt-2 text-xs text-muted">{it.label}</div>
-          </div>
-        ))}
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <h3 className="font-medium text-gray-800">Traffic by Device</h3>
+      <div className="mt-4" style={{ height: "220px" }}>
+        <Bar data={data} options={options} />
       </div>
     </div>
   );

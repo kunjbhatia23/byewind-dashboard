@@ -1,8 +1,9 @@
+// src/components/RightRail.jsx
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const Section = ({ title, children }) => (
-  <section className="bg-card rounded-xl2 border border-ring shadow-soft p-4">
-    <h3 className="font-medium">{title}</h3>
+  <section className="bg-white rounded-xl border border-gray-200 p-6">
+    <h3 className="font-medium text-gray-800">{title}</h3>
     <div className="mt-4">{children}</div>
   </section>
 );
@@ -26,15 +27,15 @@ export default function RightRail() {
   ];
 
   return (
-    <div className="space-y-6">
+    <aside className="w-80 space-y-6">
       <Section title="Notifications">
         <ul className="space-y-4">
           {notifications.map((n,i)=>(
             <li key={i} className="flex items-start gap-3">
-              <CheckCircleIcon className="w-5 h-5 text-gray-300" />
+              <CheckCircleIcon className="w-5 h-5 text-gray-400 mt-0.5" />
               <div>
-                <div className="text-sm">{n.text}</div>
-                <div className="text-xs text-muted">{n.time}</div>
+                <div className="text-sm text-gray-700">{n.text}</div>
+                <div className="text-xs text-gray-500">{n.time}</div>
               </div>
             </li>
           ))}
@@ -45,10 +46,10 @@ export default function RightRail() {
         <ul className="space-y-4">
           {activities.map((a,i)=>(
             <li key={i} className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-gray-200" />
+              <div className="w-8 h-8 rounded-full bg-gray-100" />
               <div>
-                <div className="text-sm">{a.text}</div>
-                <div className="text-xs text-muted">{a.time}</div>
+                <div className="text-sm text-gray-700">{a.text}</div>
+                <div className="text-xs text-gray-500">{a.time}</div>
               </div>
             </li>
           ))}
@@ -59,12 +60,12 @@ export default function RightRail() {
         <ul className="space-y-3">
           {contacts.map((c,i)=>(
             <li key={i} className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gray-200" />
-              <div className="text-sm">{c}</div>
+              <div className="w-8 h-8 rounded-full bg-gray-100" />
+              <div className="text-sm font-medium text-gray-700">{c}</div>
             </li>
           ))}
         </ul>
       </Section>
-    </div>
+    </aside>
   );
 }
