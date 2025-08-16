@@ -3,7 +3,7 @@ import {
   BugAntIcon,
   UserPlusIcon,
   RssIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 
 export default function RightRail() {
   const notifications = [
@@ -31,52 +31,62 @@ export default function RightRail() {
   ];
 
   return (
-    <aside className="w-80 bg-white p-6 space-y-8 border-l border-gray-200">
-      {/* Notifications List */}
-      <ul className="space-y-4">
-        {notifications.map((n, i) => {
-          const Icon = n.icon;
-          return (
-            <li key={i} className="flex items-start gap-3">
-              <div className="bg-blue-50 p-1.5 rounded-full">
-                <Icon className="w-4 h-4 text-blue-500" />
-              </div>
-              <div>
-                <div className="text-sm text-gray-700">{n.text}</div>
-                <div className="text-xs text-gray-500">{n.time}</div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+    <aside className="w-80 bg-white p-6 border-l border-gray-200 flex-shrink-0 hidden lg:block">
+      <div className="space-y-8">
+        {/* Header */}
+        <h2 className="text-base font-semibold text-gray-800">Notifications</h2>
 
-      {/* Activities */}
-      <div>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Activities</h3>
-        <ul className="mt-4 space-y-4">
-          {activities.map((a, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <img src={a.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
-              <div>
-                <div className="text-sm text-gray-700">{a.text}</div>
-                <div className="text-xs text-gray-500">{a.time}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+        {/* Notifications List */}
+        <div>
+          <ul className="space-y-4">
+            {notifications.map((n, i) => {
+              const Icon = n.icon;
+              return (
+                <li key={i} className="flex items-start gap-4">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <Icon className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-800 font-medium">{n.text}</p>
+                    <p className="text-xs text-gray-500">{n.time}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
-      {/* Contacts */}
-      <div>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Contacts</h3>
-        <ul className="mt-4 space-y-3">
-          {contacts.map((c, i) => (
-            <li key={i} className="flex items-center gap-3">
-              <img src={c.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
-              <div className="text-sm font-medium text-gray-700">{c.name}</div>
-            </li>
-          ))}
-        </ul>
+        {/* Activities */}
+        <div>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Activities</h3>
+          <ul className="mt-4">
+            {activities.map((a, i) => (
+              <li key={i} className="relative flex items-start gap-4 pb-6">
+                {i < activities.length - 1 && (
+                  <div className="absolute left-4 top-5 w-px h-full bg-gray-200"></div>
+                )}
+                <img src={a.avatar} alt="avatar" className="relative w-8 h-8 rounded-full border-2 border-white" />
+                <div>
+                  <p className="text-sm text-gray-800 font-medium">{a.text}</p>
+                  <p className="text-xs text-gray-500">{a.time}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Contacts */}
+        <div>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Contacts</h3>
+          <ul className="mt-4 space-y-2">
+            {contacts.map((c, i) => (
+              <li key={i} className="flex items-center gap-3 p-1 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src={c.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
+                <span className="text-sm font-medium text-gray-800">{c.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </aside>
   );
